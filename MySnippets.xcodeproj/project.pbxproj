@@ -3,27 +3,40 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		3963C831260ED17A004352BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3963C830260ED17A004352BB /* AppDelegate.swift */; };
 		3963C833260ED17A004352BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3963C832260ED17A004352BB /* SceneDelegate.swift */; };
-		3963C835260ED17A004352BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3963C834260ED17A004352BB /* ViewController.swift */; };
 		3963C838260ED17A004352BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3963C836260ED17A004352BB /* Main.storyboard */; };
 		3963C83A260ED17D004352BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3963C839260ED17D004352BB /* Assets.xcassets */; };
 		3963C83D260ED17D004352BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3963C83B260ED17D004352BB /* LaunchScreen.storyboard */; };
+		3963C847260ED319004352BB /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3963C846260ED319004352BB /* MasterViewController.swift */; };
+		3963C84A260ED44E004352BB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3963C849260ED44E004352BB /* DetailViewController.swift */; };
+		3963C84E260ED4A3004352BB /* Sourceful in Frameworks */ = {isa = PBXBuildFile; productRef = 3963C84D260ED4A3004352BB /* Sourceful */; };
+		3963C863260ED8A0004352BB /* Snippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3963C862260ED8A0004352BB /* Snippet.swift */; };
+		3963C866260EDD9D004352BB /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3963C85E260ED5AE004352BB /* Themes.swift */; };
+		3963C867260EDD9D004352BB /* EditableToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3963C85C260ED5AE004352BB /* EditableToolbarView.swift */; };
+		3963C868260EDD9D004352BB /* CodeFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3963C85D260ED5AE004352BB /* CodeFont.swift */; };
+		3963C869260EDD9D004352BB /* UIApplication+activeTraitCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3963C85B260ED5A4004352BB /* UIApplication+activeTraitCollection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3963C82D260ED17A004352BB /* MySnippets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySnippets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3963C830260ED17A004352BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3963C832260ED17A004352BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3963C834260ED17A004352BB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3963C837260ED17A004352BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3963C839260ED17D004352BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3963C83C260ED17D004352BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3963C83E260ED17D004352BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3963C846260ED319004352BB /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		3963C849260ED44E004352BB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		3963C85B260ED5A4004352BB /* UIApplication+activeTraitCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+activeTraitCollection.swift"; sourceTree = "<group>"; };
+		3963C85C260ED5AE004352BB /* EditableToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableToolbarView.swift; sourceTree = "<group>"; };
+		3963C85D260ED5AE004352BB /* CodeFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeFont.swift; sourceTree = "<group>"; };
+		3963C85E260ED5AE004352BB /* Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themes.swift; sourceTree = "<group>"; };
+		3963C862260ED8A0004352BB /* Snippet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snippet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3963C84E260ED4A3004352BB /* Sourceful in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,13 +70,19 @@
 		3963C82F260ED17A004352BB /* MySnippets */ = {
 			isa = PBXGroup;
 			children = (
+				3963C85D260ED5AE004352BB /* CodeFont.swift */,
+				3963C85C260ED5AE004352BB /* EditableToolbarView.swift */,
+				3963C85E260ED5AE004352BB /* Themes.swift */,
+				3963C85B260ED5A4004352BB /* UIApplication+activeTraitCollection.swift */,
 				3963C830260ED17A004352BB /* AppDelegate.swift */,
 				3963C832260ED17A004352BB /* SceneDelegate.swift */,
-				3963C834260ED17A004352BB /* ViewController.swift */,
 				3963C836260ED17A004352BB /* Main.storyboard */,
 				3963C839260ED17D004352BB /* Assets.xcassets */,
 				3963C83B260ED17D004352BB /* LaunchScreen.storyboard */,
 				3963C83E260ED17D004352BB /* Info.plist */,
+				3963C846260ED319004352BB /* MasterViewController.swift */,
+				3963C849260ED44E004352BB /* DetailViewController.swift */,
+				3963C862260ED8A0004352BB /* Snippet.swift */,
 			);
 			path = MySnippets;
 			sourceTree = "<group>";
@@ -83,6 +103,9 @@
 			dependencies = (
 			);
 			name = MySnippets;
+			packageProductDependencies = (
+				3963C84D260ED4A3004352BB /* Sourceful */,
+			);
 			productName = MySnippets;
 			productReference = 3963C82D260ED17A004352BB /* MySnippets.app */;
 			productType = "com.apple.product-type.application";
@@ -110,6 +133,9 @@
 				Base,
 			);
 			mainGroup = 3963C824260ED17A004352BB;
+			packageReferences = (
+				3963C84C260ED4A3004352BB /* XCRemoteSwiftPackageReference "Sourceful" */,
+			);
 			productRefGroup = 3963C82E260ED17A004352BB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,9 +163,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3963C835260ED17A004352BB /* ViewController.swift in Sources */,
 				3963C831260ED17A004352BB /* AppDelegate.swift in Sources */,
+				3963C866260EDD9D004352BB /* Themes.swift in Sources */,
+				3963C847260ED319004352BB /* MasterViewController.swift in Sources */,
+				3963C868260EDD9D004352BB /* CodeFont.swift in Sources */,
+				3963C863260ED8A0004352BB /* Snippet.swift in Sources */,
+				3963C867260EDD9D004352BB /* EditableToolbarView.swift in Sources */,
 				3963C833260ED17A004352BB /* SceneDelegate.swift in Sources */,
+				3963C84A260ED44E004352BB /* DetailViewController.swift in Sources */,
+				3963C869260EDD9D004352BB /* UIApplication+activeTraitCollection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +371,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3963C84C260ED4A3004352BB /* XCRemoteSwiftPackageReference "Sourceful" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/Sourceful.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3963C84D260ED4A3004352BB /* Sourceful */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3963C84C260ED4A3004352BB /* XCRemoteSwiftPackageReference "Sourceful" */;
+			productName = Sourceful;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3963C825260ED17A004352BB /* Project object */;
 }
