@@ -14,12 +14,35 @@ import Sourceful
 
 class DetailViewController: UIViewController {
     @IBOutlet weak var textView: SyntaxTextView!
+    
     let lexer = SwiftLexer()
+    let lexerPython = Python3Lexer()
 
     var snippet: Snippet? {
         didSet {
             refreshUI()
         }
+    }
+    
+    var language = "swift"
+    
+    var menuItems: [UIAction] {
+        return [
+            UIAction(title: "Swift", image: UIImage(systemName: "doc"), handler: { (_) in
+                self.language = "swift"
+                self.textView.delegate = self
+
+            }),
+            UIAction(title: "Python 3", image: UIImage(systemName: "doc.fill"), handler: { (_) in
+                self.language = "python"
+                self.textView.delegate = self
+
+            })
+        ]
+    }
+    
+    var languageMenu: UIMenu {
+        return UIMenu(title: "", image: nil, identifier: nil, options: [], children: menuItems)
     }
 
     private func refreshUI() {
@@ -44,6 +67,10 @@ class DetailViewController: UIViewController {
 
         // Attach a toolbar with common key symbols to make typing easier.
         textView.contentTextView.inputAccessoryView = UIView.editingToolbar(target: self, action: #selector(insertCharacter))
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Language", image: nil, primaryAction: nil, menu: languageMenu)
+
+
     }
 
     /// Called when the user taps a key symbol in our input accessory view.
@@ -53,6 +80,7 @@ class DetailViewController: UIViewController {
         textView.insertText(string)
         UIDevice.current.playInputClick()
     }
+   
 }
 
 extension DetailViewController: SnippetSelectionDelegate {
@@ -64,6 +92,12 @@ extension DetailViewController: SnippetSelectionDelegate {
 extension DetailViewController: SyntaxTextViewDelegate {
     /// Send back our Swift lexer for this source code.
     func lexerForSource(_ source: String) -> Lexer {
-        return lexer
+        if(self.language == "swift"){
+            return lexer
+        }else{
+            return lexerPython
+        }
+            
+        
     }
 }

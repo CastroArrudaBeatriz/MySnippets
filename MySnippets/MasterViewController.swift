@@ -26,31 +26,21 @@ class MasterViewController: UITableViewController {
         super.viewDidLoad()
     }
     
-    override func tableView(
-        _ tableView: UITableView,
-        numberOfRowsInSection section: Int)
-    -> Int {
-        
+    
+    override func tableView(_ tableView: UITableView,numberOfRowsInSection section: Int)-> Int {
         return snippets.count
-        
     }
 
-    override func tableView(
-      _ tableView: UITableView,
-      cellForRowAt indexPath: IndexPath)
-        -> UITableViewCell {
+    override func tableView(_ tableView: UITableView,cellForRowAt indexPath: IndexPath)-> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-
         cell.textLabel?.text = snippets[indexPath.row].name
 
         return cell
         
     }
     
-    override func tableView(
-        _ tableView: UITableView,
-        didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView,didSelectRowAt indexPath: IndexPath) {
         
         let selectedSnippet = snippets[indexPath.row]
         delegate?.snippetSelected(selectedSnippet)
@@ -60,5 +50,13 @@ class MasterViewController: UITableViewController {
         }
         
     }
+    
+    
+    @IBAction func addSnippet(_ sender: Any) {
+        let next = snippets.count + 1
+        snippets.append(Snippet(name: "Snippet " + String(next) , content: ""))
+        tableView.reloadData()
+    }
+    
 
 }
