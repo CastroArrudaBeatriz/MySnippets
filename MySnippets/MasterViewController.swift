@@ -22,24 +22,28 @@ class MasterViewController: UITableViewController {
         
         Snippet(name: "Snippet 3", content: "let z = \"abc\"", tags: [String("Networking"),String("Persistencia")])
     ]
-
+    
+    var tags: [String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     
     override func tableView(_ tableView: UITableView,numberOfRowsInSection section: Int)-> Int {
-        return snippets.count
+       
+        snippets.forEach { snip in
+            snip.tags.forEach { tag in
+                if(!tags.contains(tag)){ tags.append(tag)}
+            }
+        }
+        
+        return tags.count
     }
 
     override func tableView(_ tableView: UITableView,cellForRowAt indexPath: IndexPath)-> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        
-        snippets[indexPath.row].tags.forEach { tag in
-            cell.textLabel?.text = tag
-        }
-        
+        cell.textLabel?.text = tags[indexPath.row]
         return cell
         
     }
