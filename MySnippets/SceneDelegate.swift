@@ -26,6 +26,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         detail?.snippet = firstSnippet
         secondary?.delegate = detail
         
+        master?.delegate = secondary
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
