@@ -10,4 +10,5 @@ import Foundation
 struct Snippet {
     var name: String
     var content: String
+    var tags: [String]
 }

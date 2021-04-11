@@ -1,19 +1,21 @@
 //
-//  MasterTableViewController.swift
+//  SecondaryViewController.swift
 //  MySnippets
 //
-//  Created by Beatriz Castro on 26/03/21.
+//  Created by Beatriz Castro on 10/04/21.
 //
 
 import UIKit
 
+//snippets
 
+protocol SnippetSelectionDelegate: AnyObject {
+    func snippetSelected(_ newSnippet: Snippet)
+}
 
-//tags
+class SecondaryViewController: UITableViewController {
 
-class MasterViewController: UITableViewController {
-    
-//    weak var delegate: SnippetSelectionDelegate?
+    weak var delegate: SnippetSelectionDelegate?
     
     var snippets: [Snippet] = [
         Snippet(name: "Snippet 1", content: "let x = 10", tags: [String("Networking"),String("Persistencia")]),
@@ -35,26 +37,28 @@ class MasterViewController: UITableViewController {
     override func tableView(_ tableView: UITableView,cellForRowAt indexPath: IndexPath)-> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        
-        snippets[indexPath.row].tags.forEach { tag in
-            cell.textLabel?.text = tag
-        }
-        
+        cell.textLabel?.text = snippets[indexPath.row].name
+
         return cell
         
     }
     
     override func tableView(_ tableView: UITableView,didSelectRowAt indexPath: IndexPath) {
-        
-//        let selectedSnippet = snippets[indexPath.row]
-//        delegate?.snippetSelected(selectedSnippet)
-//
-//        if let detailViewController = delegate as? DetailViewController {
-//            splitViewController?.showDetailViewController(detailViewController, sender: nil)
-//        }
-        
+
+        let selectedSnippet = snippets[indexPath.row]
+        delegate?.snippetSelected(selectedSnippet)
+
+        if let detailViewController = delegate as? DetailViewController {
+            splitViewController?.showDetailViewController(detailViewController, sender: nil)
+        }
+
     }
     
-    
 
+    @IBAction func addSnippet(_ sender: Any) {
+        
+        let next = snippets.count + 1
+        snippets.append(Snippet(name: "Snippet " + String(next) , content: "", tags: [String("Geral")]))
+        tableView.reloadData()
+    }
 }

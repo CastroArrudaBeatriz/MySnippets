@@ -73,46 +73,56 @@
                             <outlet property="delegate" destination="Zjt-yM-ahJ" id="hrA-qB-twS"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Meus Snippets" id="Xuw-Zu-DfY">
-                        <barButtonItem key="rightBarButtonItem" image="plus.square" catalog="system" id="Wer-TG-QOR">
-                            <connections>
-                                <action selector="addSnippet:" destination="Zjt-yM-ahJ" id="mM7-h4-9dd"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Tags" id="Xuw-Zu-DfY"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GB6-lz-y8V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="598" y="-689"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="iHX-r8-Uq9">
-            <objects>
-                <navigationController id="Yu3-GT-hbP" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ncd-lm-DDr">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="Zjt-yM-ahJ" kind="relationship" relationship="rootViewController" id="fq6-SK-Yop"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bl7-SF-7zd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-293" y="-689"/>
+            <point key="canvasLocation" x="1232" y="-638"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="n2m-bN-jsB">
             <objects>
                 <splitViewController allowDoubleColumnStyle="YES" id="PG3-fv-ZUc" sceneMemberID="viewController">
                     <connections>
-                        <segue destination="Yu3-GT-hbP" kind="relationship" relationship="masterViewController" id="2Xc-Ks-Sx5"/>
                         <segue destination="v6d-xs-IV6" kind="relationship" relationship="detailViewController" id="oAE-QQ-LO5"/>
+                        <segue destination="Zjt-yM-ahJ" kind="relationship" relationship="masterViewController" id="vgm-WZ-NSN"/>
+                        <segue destination="74D-74-3jG" kind="relationship" relationship="supplementaryViewController" id="Tlh-aE-3in"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uoq-eC-wOk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1182" y="-386"/>
+        </scene>
+        <!--Meus Snippets-->
+        <scene sceneID="jk0-SJ-pMU">
+            <objects>
+                <viewController id="74D-74-3jG" customClass="SecondaryViewController" customModule="MySnippets" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Gk6-gY-oOx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="sCI-EB-DDh">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sCI-EB-DDh" id="Guz-Eg-Vwi">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Meus Snippets" id="aZE-0D-aaH">
+                        <barButtonItem key="rightBarButtonItem" image="plus.square" catalog="system" id="zFG-S9-Z6p">
+                            <connections>
+                                <action selector="addSnippet:" destination="74D-74-3jG" id="iNY-JL-XtI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Knm-cb-P5p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2258" y="-638"/>
         </scene>
     </scenes>
     <resources>
