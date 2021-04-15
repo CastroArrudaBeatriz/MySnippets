@@ -13,23 +13,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-       
-        guard
-            let splitViewController = window?.rootViewController as? UISplitViewController,
-            let leftNavController = splitViewController.viewControllers.first
-                as? UINavigationController,
-            let masterViewController = leftNavController.viewControllers.first
-                as? MasterViewController,
-            let detailNavViewController = splitViewController.viewControllers.last
-                as? UINavigationController,
-            let detailViewController = detailNavViewController.viewControllers.first
-                as? DetailViewController
-        else { fatalError() }
-
-        let firstSnippet = masterViewController.snippets.first
-        detailViewController.snippet = firstSnippet
-        masterViewController.delegate = detailViewController
         
+        let splitViewController =  window?.rootViewController as? UISplitViewController
+        
+        let master = splitViewController?.viewController(for: UISplitViewController.Column(rawValue: 0)!) as? MasterViewController
+        
+        let secondary = splitViewController?.viewController(for: UISplitViewController.Column(rawValue: 1)!) as? SecondaryViewController
+        
+        let detail = splitViewController?.viewController(for: UISplitViewController.Column(rawValue: 2)!) as? DetailViewController
+        
+        let firstSnippet = secondary?.snippets.first
+        detail?.snippet = firstSnippet
+        secondary?.delegate = detail
+        
+        master?.delegate = secondary
         
     }
 
