@@ -63,6 +63,9 @@ class MasterViewController: UITableViewController {
             }
         }
         delegate?.tagSellected(snippetsByTag, selectedTag)
+        if let secondaryView = delegate as? SecondaryViewController {
+            splitViewController?.show(UISplitViewController.Column(rawValue: 1)!)
+        }
         
     }
     
